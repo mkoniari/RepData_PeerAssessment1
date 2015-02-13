@@ -18,15 +18,14 @@ if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
 }
 sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
-downloadFile <-function(){
-        fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"                    
-        download.file(fileUrl,  DATAZIP, method="curl")
-        cat(paste0("file download complete - remember to unzip file: ",DATAZIP))        
+downloadFile <-function(furl, fsave){
+        download.file(fileUrl,  fsave, method="curl")
+        cat(paste0("file download complete - remember to unzip file: ",fsave))        
 }   
 
 
 DEBUG <- TRUE
-
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 DATAFILE <- file.path(getwd(), "activity.csv")
 DATAZIP  <- file.path(getwd(), "activity.zip")
 
@@ -36,7 +35,7 @@ if (!file.exists(DATAFILE)) {
   # check data exists
         if (!file.exists(DATAZIP)) {
                 cat(paste0(DATAZIP," doesn't exist trying to download ... "))
-                downloadFile()
+                downloadFile(fileUrl, DATAZIP)
                 }
   unzip ("activity.zip")
   stopifnot(file.exists(DATAFILE))          
@@ -62,8 +61,7 @@ if (!file.exists(DATAFILE)) {
 ## [1] digest_0.6.8    evaluate_0.5.5  formatR_1.0     htmltools_0.2.6
 ## [5] rmarkdown_0.4.2 stringr_0.6.2   tools_3.1.2     yaml_2.1.13    
 ##     dplyr     tidyr   ggplot2 lubridate 
-##      TRUE      TRUE      TRUE      TRUE 
-## D:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.csv doesn't existD:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.zip doesn't exist trying to download ... file download complete - remember to unzip file: D:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.zip
+##      TRUE      TRUE      TRUE      TRUE
 ```
 
 

@@ -1,3 +1,7 @@
+
+Link on <a href="http://rpubs.com/mkoniari/59411" target="_blank">RPubs</a>  
+
+
 ## Introduction
 
 It is now possible to collect a large amount of data about personal
