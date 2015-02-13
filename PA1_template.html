@@ -77,12 +77,13 @@ sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
 downloadFile &lt;-function(){
         fileUrl &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;                    
-        download.file(fileUrl, file.path(getwd(), f), method=&quot;curl&quot;)
-        cat(paste0(&quot;file download complete - remember to unzip file: &quot;,f))        
+        download.file(fileUrl,  DATAZIP, method=&quot;curl&quot;)
+        cat(paste0(&quot;file download complete - remember to unzip file: &quot;,DATAZIP))        
 }   
 
 
 DEBUG &lt;- TRUE
+
 DATAFILE &lt;- file.path(getwd(), &quot;activity.csv&quot;)
 DATAZIP  &lt;- file.path(getwd(), &quot;activity.zip&quot;)
 
@@ -115,7 +116,8 @@ if (!file.exists(DATAFILE)) {
 ## [1] digest_0.6.8    evaluate_0.5.5  formatR_1.0     htmltools_0.2.6
 ## [5] rmarkdown_0.4.2 stringr_0.6.2   tools_3.1.2     yaml_2.1.13    
 ##     dplyr     tidyr   ggplot2 lubridate 
-##      TRUE      TRUE      TRUE      TRUE</code></pre>
+##      TRUE      TRUE      TRUE      TRUE 
+## D:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.csv doesn't existD:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.zip doesn't exist trying to download ... file download complete - remember to unzip file: D:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.zip</code></pre>
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <p>Show any code that is needed to</p>

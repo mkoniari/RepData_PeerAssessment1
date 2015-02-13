@@ -20,12 +20,13 @@ sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
 downloadFile <-function(){
         fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"                    
-        download.file(fileUrl, file.path(getwd(), f), method="curl")
-        cat(paste0("file download complete - remember to unzip file: ",f))        
+        download.file(fileUrl,  DATAZIP, method="curl")
+        cat(paste0("file download complete - remember to unzip file: ",DATAZIP))        
 }   
 
 
 DEBUG <- TRUE
+
 DATAFILE <- file.path(getwd(), "activity.csv")
 DATAZIP  <- file.path(getwd(), "activity.zip")
 
@@ -61,7 +62,8 @@ if (!file.exists(DATAFILE)) {
 ## [1] digest_0.6.8    evaluate_0.5.5  formatR_1.0     htmltools_0.2.6
 ## [5] rmarkdown_0.4.2 stringr_0.6.2   tools_3.1.2     yaml_2.1.13    
 ##     dplyr     tidyr   ggplot2 lubridate 
-##      TRUE      TRUE      TRUE      TRUE
+##      TRUE      TRUE      TRUE      TRUE 
+## D:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.csv doesn't existD:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.zip doesn't exist trying to download ... file download complete - remember to unzip file: D:/projectsR/05_ReproducibleResearch/RepData_PeerAssessment1/activity.zip
 ```
 
 

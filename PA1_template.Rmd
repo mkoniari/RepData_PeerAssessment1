@@ -23,12 +23,13 @@ sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
 downloadFile <-function(){
         fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"                    
-        download.file(fileUrl, file.path(getwd(), f), method="curl")
-        cat(paste0("file download complete - remember to unzip file: ",f))        
+        download.file(fileUrl,  DATAZIP, method="curl")
+        cat(paste0("file download complete - remember to unzip file: ",DATAZIP))        
 }   
 
 
 DEBUG <- TRUE
+
 DATAFILE <- file.path(getwd(), "activity.csv")
 DATAZIP  <- file.path(getwd(), "activity.zip")
 
